@@ -1,0 +1,81 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-28T05:30:28.281Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-11",
+        "summary": "Diagnose and fix the data loading issue causing the dashboard charts to render empty. Verify that the backend actor is correctly initialized and reachable from the frontend, that the `useFilteredPatients` and related React Query hooks in `frontend/src/hooks/useQueries.ts` are receiving a valid actor instance from `useActor`, and that the query functions are properly awaiting and returning data. Ensure error and loading states are handled so that failures surface visibly rather than silently showing blank chart areas.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/pages/Dashboard.tsx",
+          "frontend/src/pages/DataExplorer.tsx",
+          "frontend/src/components/charts/HeartDiseaseByAgeChart.tsx",
+          "frontend/src/components/charts/AgeVsHeartRateChart.tsx",
+          "frontend/src/components/charts/AnginaByGenderChart.tsx",
+          "frontend/src/components/charts/ChestPainDistributionChart.tsx",
+          "frontend/src/components/charts/CholesterolByAgeChart.tsx",
+          "frontend/src/components/charts/CholesterolVsBPChart.tsx",
+          "frontend/src/components/charts/ComorbidityRatesChart.tsx",
+          "frontend/src/components/charts/HeartDiseaseByGenderChart.tsx",
+          "frontend/src/components/charts/HeartDiseaseByRaceChart.tsx",
+          "frontend/src/components/charts/ThalassemiaDistributionChart.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/pages/Dashboard.tsx",
+          "frontend/src/pages/DataExplorer.tsx",
+          "frontend/src/components/charts/HeartDiseaseByAgeChart.tsx",
+          "frontend/src/components/charts/AgeVsHeartRateChart.tsx",
+          "frontend/src/components/charts/AnginaByGenderChart.tsx",
+          "frontend/src/components/charts/ChestPainDistributionChart.tsx",
+          "frontend/src/components/charts/CholesterolByAgeChart.tsx",
+          "frontend/src/components/charts/CholesterolVsBPChart.tsx",
+          "frontend/src/components/charts/ComorbidityRatesChart.tsx",
+          "frontend/src/components/charts/HeartDiseaseByGenderChart.tsx",
+          "frontend/src/components/charts/HeartDiseaseByRaceChart.tsx",
+          "frontend/src/components/charts/ThalassemiaDistributionChart.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Ensure the Motoko backend actor in `backend/main.mo` correctly initializes and exposes the synthetic 500-patient dataset on canister startup. Verify that the `getFilteredPatients`, `getAllPatients`, `getDatasetConfig`, and `getDatasetSize` query functions return well-formed, non-empty responses. If the dataset generation logic runs in a postupgrade or init hook, confirm it executes reliably so that query calls made immediately after deployment return data.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/FilterPanel.tsx",
+    "frontend/src/components/charts/AgeVsHeartRateChart.tsx",
+    "frontend/src/components/charts/AnginaByGenderChart.tsx",
+    "frontend/src/components/charts/ChestPainDistributionChart.tsx",
+    "frontend/src/components/charts/CholesterolByAgeChart.tsx",
+    "frontend/src/components/charts/CholesterolVsBPChart.tsx",
+    "frontend/src/components/charts/ComorbidityRatesChart.tsx",
+    "frontend/src/components/charts/HeartDiseaseByAgeChart.tsx",
+    "frontend/src/components/charts/HeartDiseaseByGenderChart.tsx",
+    "frontend/src/components/charts/HeartDiseaseByRaceChart.tsx",
+    "frontend/src/components/charts/ThalassemiaDistributionChart.tsx",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/Dashboard.tsx",
+    "frontend/src/pages/DataExplorer.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

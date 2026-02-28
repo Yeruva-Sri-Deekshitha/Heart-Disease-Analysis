@@ -1,0 +1,84 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix Dashboard Charts Data Loading Issue",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "summary": "Diagnose and fix the data loading issue causing dashboard charts to render empty by ensuring the backend actor is properly initialized, React Query hooks receive valid actor instances, and error/loading states are handled visibly",
+      "acceptanceCriteria": [
+        "On page load, the dashboard displays populated charts (bar charts, scatter plots, pie charts) with data drawn from the synthetic 500-patient dataset.",
+        "The filter panel controls (age range, gender, race, diabetes, stroke) update all charts when changed.",
+        "If the backend call fails, a visible error message or retry prompt is shown instead of blank chart cards.",
+        "The Data Explorer table also loads and displays patient records without requiring a page refresh."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Fix the useFilteredPatients, useAllPatients, useDatasetConfig, and useDatasetSize hooks to properly handle actor initialization, ensure query functions correctly await backend calls and return data, add error boundary handling, and verify that null/undefined actor instances are gracefully handled with appropriate enabled flags. Add console logging for debugging actor state and query execution."
+        },
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Add visible error and loading state handling for the useFilteredPatients hook. Display a loading spinner or skeleton when data is being fetched, and show a user-friendly error message with a retry button when queries fail. Ensure that chart components receive valid data arrays and handle empty datasets gracefully. Verify that filter state changes properly trigger query refetches."
+        },
+        {
+          "path": "frontend/src/pages/DataExplorer.tsx",
+          "operation": "modify",
+          "description": "Add visible error and loading state handling for the useAllPatients hook. Display a loading indicator while data is being fetched and show a clear error message with retry functionality if the query fails. Ensure the table renders correctly when data becomes available and handles empty result sets appropriately."
+        },
+        {
+          "path": "frontend/src/components/charts/HeartDiseaseByAgeChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before processing. Handle edge cases where data might be undefined, null, or empty. Display a fallback message or empty state indicator when no data is available rather than rendering blank chart areas."
+        },
+        {
+          "path": "frontend/src/components/charts/AgeVsHeartRateChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before sampling and processing. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/AnginaByGenderChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before computing gender-based statistics. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/ChestPainDistributionChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before computing chest pain distribution. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/CholesterolByAgeChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before computing age-based cholesterol statistics. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/CholesterolVsBPChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before sampling and processing. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/ComorbidityRatesChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before computing comorbidity statistics. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/HeartDiseaseByGenderChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before computing gender-based heart disease prevalence. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/HeartDiseaseByRaceChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before computing race-based heart disease prevalence. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        },
+        {
+          "path": "frontend/src/components/charts/ThalassemiaDistributionChart.tsx",
+          "operation": "modify",
+          "description": "Add defensive checks to ensure the patients prop is a valid array before computing thalassemia distribution. Handle edge cases where data might be undefined, null, or empty. Display a fallback message when no data is available."
+        }
+      ]
+    }
+  ]
+}

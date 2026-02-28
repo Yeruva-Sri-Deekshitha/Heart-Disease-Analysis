@@ -1,0 +1,35 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-diagnose-and-fix-the-data-loading-issue-causing-the-dashboard-charts-to-render-empty-verify-that-the-backend-actor-is-correctly-initialized-and-reachable-from-the-frontend-that-the-usefilteredpatients-and-related-react-query-hooks-in-frontend-src-hooks-usequeries-ts-are-receiving-a-valid-actor-instance-from-useactor-and-that-the-query-functions-are-properly-awaiting-and-returning-data-ensure-error-and-loading-states-are-handled-so-that-failures-surface-visibly-rather-than-silently-showing-blank-chart-areas",
+      "featureTitle": "Diagnose and fix the data loading issue causing the dashboard charts to render empty. Verify that the backend actor is correctly initialized and reachable from the frontend, that the `useFilteredPatients` and related React Query hooks in `frontend/src/hooks/useQueries.ts` are receiving a valid actor instance from `useActor`, and that the query functions are properly awaiting and returning data. Ensure error and loading states are handled so that failures surface visibly rather than silently showing blank chart areas.",
+      "files": [
+        "frontend/src/components/charts/AgeVsHeartRateChart.tsx",
+        "frontend/src/components/charts/AnginaByGenderChart.tsx",
+        "frontend/src/components/charts/ChestPainDistributionChart.tsx",
+        "frontend/src/components/charts/CholesterolByAgeChart.tsx",
+        "frontend/src/components/charts/CholesterolVsBPChart.tsx",
+        "frontend/src/components/charts/ComorbidityRatesChart.tsx",
+        "frontend/src/components/charts/HeartDiseaseByAgeChart.tsx",
+        "frontend/src/components/charts/HeartDiseaseByGenderChart.tsx",
+        "frontend/src/components/charts/HeartDiseaseByRaceChart.tsx",
+        "frontend/src/components/charts/ThalassemiaDistributionChart.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/Dashboard.tsx",
+        "frontend/src/pages/DataExplorer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

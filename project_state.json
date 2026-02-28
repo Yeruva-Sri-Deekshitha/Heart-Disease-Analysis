@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Heart Disease Analysis web application built using React (TypeScript, Tailwind CSS, React Query). Includes bar charts, scatter plots, pie charts, interactive dashboard with filters, data story with narrative scenes, and a data explorer.",
+  "architectural_notes": [
+    "Built with React (TypeScript, Tailwind CSS, React Query); Flutter was removed per user request"
+  ],
+  "known_issues": [
+    "No results displayed in the dashboard — data may not be loading correctly"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-build-an-interactive-dashboard-page-with-filter-controls-for-age-range-gender-race-diabetes-status-and-stroke-history-applying-any-filter-updates-all-visualizations-on-the-page-simultaneously",
+      "title": "Build an interactive dashboard page with filter controls for age range, gender, race, diabetes status, and stroke history. Applying any filter updates all visualizations on the page simultaneously.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-10-interactive-visualizations-using-a-react-compatible-charting-library-1-bar-chart-heart-disease-prevalence-by-age-group-2-bar-chart-prevalence-by-gender-3-bar-chart-prevalence-by-race-4-pie-chart-chest-pain-type-distribution-5-scatter-plot-age-vs-max-heart-rate-colored-by-diagnosis-6-scatter-plot-cholesterol-vs-resting-blood-pressure-7-bar-chart-diabetes-and-stroke-comorbidity-rates-among-heart-disease-patients-8-bar-chart-average-cholesterol-by-age-group-9-pie-chart-thalassemia-type-distribution-10-bar-chart-exercise-induced-angina-by-gender",
+      "title": "Implement 10 interactive visualizations using a React-compatible charting library: (1) Bar chart — heart disease prevalence by age group, (2) Bar chart — prevalence by gender, (3) Bar chart — prevalence by race, (4) Pie chart — chest pain type distribution, (5) Scatter plot — age vs. max heart rate colored by diagnosis, (6) Scatter plot — cholesterol vs. resting blood pressure, (7) Bar chart — diabetes and stroke comorbidity rates among heart disease patients, (8) Bar chart — average cholesterol by age group, (9) Pie chart — thalassemia type distribution, (10) Bar chart — exercise-induced angina by gender.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-data-story-section-with-7-sequential-narrative-scenes-each-scene-presents-a-key-insight-accompanied-by-a-focused-chart-and-explanatory-text-users-can-navigate-forward-and-backward-through-the-scenes",
+      "title": "Create a Data Story section with 7 sequential narrative scenes. Each scene presents a key insight accompanied by a focused chart and explanatory text. Users can navigate forward and backward through the scenes.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-data-explorer-page-that-displays-all-patient-records-in-a-searchable-sortable-and-paginated-table-users-can-search-by-any-text-field-and-sort-any-column-ascending-or-descending",
+      "title": "Build a Data Explorer page that displays all patient records in a searchable, sortable, and paginated table. Users can search by any text field and sort any column ascending or descending.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-professional-healthcare-themed-visual-design-throughout-the-app-clean-white-and-light-grey-backgrounds-deep-teal-and-crimson-red-accent-palette-medical-style-typography-card-based-layout-for-charts-and-a-top-navigation-bar-linking-dashboard-data-story-and-data-explorer-sections",
+      "title": "Apply a professional healthcare-themed visual design throughout the app: clean white and light grey backgrounds, deep teal and crimson red accent palette, medical-style typography, card-based layout for charts, and a top navigation bar linking Dashboard, Data Story, and Data Explorer sections.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-hero-banner-image-and-app-logo-as-static-assets-from-frontend-public-assets-generated-and-display-them-in-the-header-and-navigation-bar-respectively",
+      "title": "Render the generated hero banner image and app logo as static assets from frontend/public/assets/generated and display them in the header and navigation bar respectively.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-inform-the-user-that-flutter-is-not-a-supported-frontend-framework-on-this-platform-the-platform-exclusively-supports-react-with-typescript-tailwind-css-and-react-query-for-frontend-development-the-existing-heart-disease-analysis-application-including-all-dashboards-visualizations-data-story-data-explorer-and-healthcare-themed-ui-will-remain-built-with-react-and-cannot-be-migrated-to-flutter",
+      "title": "Inform the user that Flutter is not a supported frontend framework on this platform. The platform exclusively supports React with TypeScript, Tailwind CSS, and React Query for frontend development. The existing Heart Disease Analysis application — including all dashboards, visualizations, data story, data explorer, and healthcare-themed UI — will remain built with React and cannot be migrated to Flutter.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-platforminfo-page-frontend-src-pages-platforminfo-tsx-and-its-route-from-the-router-configuration-in-app-tsx-the-app-should-return-to-the-original-three-route-structure-dashboard-data-story-and-data-explorer",
+      "title": "Remove the PlatformInfo page (frontend/src/pages/PlatformInfo.tsx) and its route from the router configuration in App.tsx. The app should return to the original three-route structure: Dashboard, Data Story, and Data Explorer.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-diagnose-and-fix-the-data-loading-issue-causing-the-dashboard-charts-to-render-empty-verify-that-the-backend-actor-is-correctly-initialized-and-reachable-from-the-frontend-that-the-usefilteredpatients-and-related-react-query-hooks-in-frontend-src-hooks-usequeries-ts-are-receiving-a-valid-actor-instance-from-useactor-and-that-the-query-functions-are-properly-awaiting-and-returning-data-ensure-error-and-loading-states-are-handled-so-that-failures-surface-visibly-rather-than-silently-showing-blank-chart-areas",
+      "title": "Diagnose and fix the data loading issue causing the dashboard charts to render empty. Verify that the backend actor is correctly initialized and reachable from the frontend, that the `useFilteredPatients` and related React Query hooks in `frontend/src/hooks/useQueries.ts` are receiving a valid actor instance from `useActor`, and that the query functions are properly awaiting and returning data. Ensure error and loading states are handled so that failures surface visibly rather than silently showing blank chart areas.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "10 interactive visualizations (bar charts, scatter plots, pie charts)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Interactive dashboard with filters for age, gender, race, diabetes, stroke",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Data story with 7 narrative scenes",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Data explorer with searchable/sortable table",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Healthcare-themed UI with professional medical design",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Generate a synthetic heart disease dataset on the backend with at least 500 patient records including fields: age, gender, race, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, resting ECG, max heart rate, exercise-induced angina, ST depression, slope, number of major vessels, thalassemia type, diabetes, stroke history, and heart disease diagnosis (positive/negative).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Revert the application to its Version 1 state: a React/TypeScript frontend with a Motoko backend that generates a synthetic 500-patient heart disease dataset. The frontend must include: (1) an interactive dashboard with filter controls for age range, gender, race, diabetes status, and stroke history that update all visualizations simultaneously; (2) 10 interactive visualizations — bar charts for heart disease prevalence by age group, by gender, by race, average cholesterol by age group, diabetes/stroke comorbidity rates, and exercise-induced angina by gender; pie charts for chest pain type distribution and thalassemia type distribution; scatter plots for age vs. max heart rate colored by diagnosis and cholesterol vs. resting blood pressure; (3) a Data Story section with 7 sequential narrative scenes navigable forward and backward; (4) a Data Explorer page with a searchable, sortable, paginated table of all patient records; (5) a professional healthcare-themed visual design with white/light-grey backgrounds, deep teal and crimson red accents, medical-style typography, card-based chart layout, and a top navigation bar linking Dashboard, Data Story, and Data Explorer.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Ensure the Motoko backend actor in `backend/main.mo` correctly initializes and exposes the synthetic 500-patient dataset on canister startup. Verify that the `getFilteredPatients`, `getAllPatients`, `getDatasetConfig`, and `getDatasetSize` query functions return well-formed, non-empty responses. If the dataset generation logic runs in a postupgrade or init hook, confirm it executes reliably so that query calls made immediately after deployment return data.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Heart Disease Analysis",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
